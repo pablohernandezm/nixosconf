@@ -16,15 +16,6 @@
       ];
       auto-optimise-store = true;
     };
-
-    gc = {
-      automatic = true;
-      dates = [
-        "20:00"
-        "12:00"
-      ];
-      options = "--delete-older-than 3d";
-    };
   };
 
   nixpkgs.config.allowUnfree = true;

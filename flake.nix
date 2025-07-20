@@ -28,6 +28,7 @@
           specialArgs = {
             inherit inputs;
             inherit system;
+            host = "main";
           };
           modules = [ ./machines/main ];
         };
