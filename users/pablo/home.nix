@@ -1,16 +1,16 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     ../shared
-    inputs.zen-browser.homeModules.twilight
-    # or inputs.zen-browser.homeModules.beta
-    # or inputs.zen-browser.homeModules.twilight-official
   ];
-
-  programs.zen-browser.enable = true;
 
   home.packages = with pkgs; [
     gh
+    inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
   programs.git = {
