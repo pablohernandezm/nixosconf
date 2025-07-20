@@ -1,12 +1,11 @@
 { ... }:
 {
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
+
+  services.playerctld.enable = true;
 
   # Whether to enable the RealtimeKit system service,
   # which hands out realtime scheduling priority to user processes on demand.

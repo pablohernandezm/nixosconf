@@ -4,7 +4,7 @@
     ./cups
     ./firewall
     ./networking
-    ./pipewire
+    ./sound
     ./ssh
   ];
 }
