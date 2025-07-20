@@ -8,21 +8,26 @@
     ./graphics.nix
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-  nix.settings.auto-optimise-store = true;
-  nixpkgs.config.allowUnfree = true;
+  nix = {
+    settings = {
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      auto-optimise-store = true;
+    };
 
-  nix.gc = {
-    automatic = true;
-    dates = [
-      "20:00"
-      "12:00"
-    ];
-    options = "--delete-older-than 3d";
+    gc = {
+      automatic = true;
+      dates = [
+        "20:00"
+        "12:00"
+      ];
+      options = "--delete-older-than 3d";
+    };
   };
+
+  nixpkgs.config.allowUnfree = true;
 
   programs.nano.enable = false;
 
