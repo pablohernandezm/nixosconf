@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  inputs,
+  ...
+}:
 {
   imports = [
     ./boot.nix
@@ -6,7 +10,12 @@
     ./fonts.nix
     ./locale.nix
     ./graphics.nix
+    inputs.nixCats.nixosModules.default
   ];
+
+  nvim = {
+    enable = true;
+  };
 
   nix = {
     settings = {
@@ -25,7 +34,6 @@
   environment.systemPackages = with pkgs; [
     fastfetch
     git
-    neovim
     unzip
     wget
   ];

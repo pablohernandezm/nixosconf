@@ -1,4 +1,0 @@
-[submodule "neovim"]
-	path = dotfiles/nvim
-	url = https://github.com/pablohernandezm/dot-nvim.git
-	branch = main
