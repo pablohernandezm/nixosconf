@@ -10,7 +10,7 @@
       defaultFonts = {
         serif = [ "Domine" ];
         sansSerif = [ "Roboto" ];
-        monospace = [ "JetBrainsMono NFP" ];
+        monospace = [ "JetBrainsMono NFM" ];
       };
     };
   };
