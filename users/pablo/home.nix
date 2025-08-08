@@ -10,6 +10,9 @@
 
   home.packages = with pkgs; [
     gh
+    cargo
+    rustc
+    gcc
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
