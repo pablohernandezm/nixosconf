@@ -21,6 +21,7 @@ in
       window_padding_width 14
 
       map ctrl+shift+\ move_window_to_top
+      map ctrl+shift+/ new_window_with_cwd !neighbor
 
       include themes/rose-pine-moon.conf
     '';
