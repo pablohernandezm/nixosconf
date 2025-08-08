@@ -79,59 +79,58 @@ in
         };
       };
 
-      bind =
-        [
-          "$mod, w, exec, pkill waybar || waybar &"
-          "$mod, z, exec, $browser"
-          "$mod, m, exec, $menu"
-          "$mod, e, exec, $emoji"
-          "$mod, t, exec, $terminal"
-          "$mod, c, killactive,"
-          "$mod, s, exec, uwsm app -- hyprshot -m region --freeze"
-          "$mod Shift, s, exec, uwsm app -- hyprshot -m output"
-          "$mod Alt, s, exec, uwsm app -- hyprshot -m window"
+      bind = [
+        "$mod, w, exec, pkill waybar || waybar &"
+        "$mod, z, exec, $browser"
+        "$mod, m, exec, $menu"
+        "$mod, e, exec, $emoji"
+        "$mod, t, exec, $terminal"
+        "$mod, c, killactive,"
+        "$mod, s, exec, uwsm app -- hyprshot -m region --freeze"
+        "$mod Shift, s, exec, uwsm app -- hyprshot -m output"
+        "$mod Alt, s, exec, uwsm app -- hyprshot -m window"
 
-          "$mod, j, movefocus, d"
-          "$mod, k, movefocus, u"
-          "$mod, h, movefocus, l"
-          "$mod, l, movefocus, r"
+        "$mod, j, movefocus, d"
+        "$mod, k, movefocus, u"
+        "$mod, h, movefocus, l"
+        "$mod, l, movefocus, r"
 
-          "$mod Shift, h, movewindow, l"
-          "$mod Shift, j, movewindow, d"
-          "$mod Shift, k, movewindow, u"
-          "$mod Shift, l, movewindow, r"
+        "$mod Shift, h, movewindow, l"
+        "$mod Shift, j, movewindow, d"
+        "$mod Shift, k, movewindow, u"
+        "$mod Shift, l, movewindow, r"
 
-          "$mod Alt, h, resizeactive, -25 0"
-          "$mod Alt, j, resizeactive, 0 25"
-          "$mod Alt, k, resizeactive, 0 -25"
-          "$mod Alt, l, resizeactive, 25 0"
+        "$mod Alt, h, resizeactive, -25 0"
+        "$mod Alt, j, resizeactive, 0 25"
+        "$mod Alt, k, resizeactive, 0 -25"
+        "$mod Alt, l, resizeactive, 25 0"
 
-          "$mod, mouse_down, workspace, e+1"
-          "$mod, mouse_up, workspace, e-1"
+        "$mod, mouse_down, workspace, e+1"
+        "$mod, mouse_up, workspace, e-1"
 
-          "$mod Shift, [, exec, hyprctl keyword general:layout 'dwindle'"
-          "$mod shift, ], exec, hyprctl keyword general:layout 'master'"
-        ]
-        ++ (
-          # workspaces
-          # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
-          builtins.concatLists (
-            builtins.genList (
-              x:
-              let
-                ws =
-                  let
-                    c = (x + 1) / 10;
-                  in
-                  builtins.toString (x + 1 - (c * 10));
-              in
-              [
-                "$mod, ${ws}, workspace, ${toString (x + 1)}"
-                "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
-              ]
-            ) 10
-          )
-        );
+        "$mod Shift, [, exec, hyprctl keyword general:layout 'dwindle'"
+        "$mod shift, ], exec, hyprctl keyword general:layout 'master'"
+      ]
+      ++ (
+        # workspaces
+        # binds $mod + [shift +] {1..10} to [move to] workspace {1..10}
+        builtins.concatLists (
+          builtins.genList (
+            x:
+            let
+              ws =
+                let
+                  c = (x + 1) / 10;
+                in
+                builtins.toString (x + 1 - (c * 10));
+            in
+            [
+              "$mod, ${ws}, workspace, ${toString (x + 1)}"
+              "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+            ]
+          ) 10
+        )
+      );
 
       bindm = [
         "$mod, mouse:272, movewindow"
