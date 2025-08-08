@@ -13,6 +13,10 @@
     cargo
     rustc
     gcc
+    deno
+    nodejs
+    supabase-cli
+    jujutsu
     inputs.zen-browser.packages.${pkgs.system}.default
     stremio
   ];
