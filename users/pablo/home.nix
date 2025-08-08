@@ -14,6 +14,7 @@
     rustc
     gcc
     inputs.zen-browser.packages.${pkgs.system}.default
+    stremio
   ];
 
   programs.git = {
