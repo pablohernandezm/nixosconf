@@ -18,6 +18,7 @@
     supabase-cli
     jujutsu
     act
+    concurrently
     inputs.zen-browser.packages.${pkgs.system}.default
     stremio
   ];
