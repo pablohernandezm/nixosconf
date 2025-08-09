@@ -17,6 +17,7 @@
     nodejs
     supabase-cli
     jujutsu
+    act
     inputs.zen-browser.packages.${pkgs.system}.default
     stremio
   ];

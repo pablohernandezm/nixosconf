@@ -7,5 +7,6 @@
     ./nh
     ./sound
     ./ssh
+    ./virtualization
   ];
 }
