@@ -20,6 +20,7 @@
     act
     concurrently
     stremio
+    lefthook
 
     # Browsers
     inputs.zen-browser.packages.${pkgs.system}.default
