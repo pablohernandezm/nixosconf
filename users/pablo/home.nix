@@ -19,8 +19,12 @@
     jujutsu
     act
     concurrently
-    inputs.zen-browser.packages.${pkgs.system}.default
     stremio
+
+    # Browsers
+    inputs.zen-browser.packages.${pkgs.system}.default
+    google-chrome
+    firefox
   ];
 
   programs.git = {
