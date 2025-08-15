@@ -7,6 +7,7 @@
     ./nh
     ./sound
     ./ssh
+    ./tmux
     ./virtualization
   ];
 }
