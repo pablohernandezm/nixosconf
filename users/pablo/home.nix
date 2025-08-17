@@ -11,6 +11,7 @@
   home.packages = with pkgs; [
     gh
     cargo
+    cargo-watch
     rustc
     gcc
     deno
@@ -21,6 +22,7 @@
     concurrently
     stremio
     lefthook
+    clippy
 
     # Browsers
     inputs.zen-browser.packages.${pkgs.system}.default
