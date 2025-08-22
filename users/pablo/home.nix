@@ -23,6 +23,7 @@
     stremio
     lefthook
     clippy
+    postman
 
     # Browsers
     inputs.zen-browser.packages.${pkgs.system}.default
