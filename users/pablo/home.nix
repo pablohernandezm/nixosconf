@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    # Development
     gh
     cargo
     cargo-watch
@@ -20,7 +21,6 @@
     jujutsu
     act
     concurrently
-    stremio
     lefthook
     clippy
     postman
@@ -29,6 +29,10 @@
     inputs.zen-browser.packages.${pkgs.system}.default
     google-chrome
     firefox
+
+    # Other apps
+    youtube-music
+    stremio
   ];
 
   programs.git = {
