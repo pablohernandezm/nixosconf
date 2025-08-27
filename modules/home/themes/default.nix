@@ -13,16 +13,30 @@ in
 {
   # Theme
   gtk = {
+    enable = true;
     theme = {
       name = themeName;
       package = themePackage;
     };
   };
 
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk";
+    style.name = "adwaita-dark";
+  };
+
   # Icon
   gtk.iconTheme = {
     package = iconPackage;
     name = iconName;
+  };
+
+  # Prefer-dark
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 
   services.dunst.iconTheme = {
@@ -42,6 +56,4 @@ in
     name = cursorTheme;
     size = cursorSize;
   };
-
-  gtk.enable = true;
 }
