@@ -4,7 +4,7 @@
     settings = {
       general = {
         ignore_dbus_inhibit = false;
-        lock_cmd = "hyprlock";
+        lock_cmd = "caelestia shell lock lock";
 
         before_sleep_cmd = "loginctl lock-session";
         after_sleep_cmd = "hyprctl dispatch dpms on"; # to avoid having to press a key twice to turn on the display.

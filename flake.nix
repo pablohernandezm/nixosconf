@@ -8,8 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
     zen-browser = {
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,6 +15,11 @@
 
     nixCats = {
       url = "github:pablohernandezm/Neovim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    caelestia-shell = {
+      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

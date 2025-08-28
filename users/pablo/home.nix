@@ -25,6 +25,9 @@
     clippy
     postman
 
+    # Nix
+    nix-prefetch-github
+
     # Browsers
     inputs.zen-browser.packages.${pkgs.system}.default
     google-chrome
@@ -32,7 +35,9 @@
 
     # Other apps
     youtube-music
-    stremio
+
+    # Vulnerable because of qtwebengine-5.15.19
+    # stremio
   ];
 
   programs.git = {

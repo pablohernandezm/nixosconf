@@ -20,6 +20,11 @@ in
     };
   };
 
+  home.packages = with pkgs; [
+    sway-audio-idle-inhibit
+    cava
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -37,8 +42,16 @@ in
       exec-once = [
         "systemctl --user enable --now hyprpolkitagent.service"
         "uwsm app -- dunst &"
-        "systemctl --user enable --now hyprpaper.service"
-        "systemctl --user enable --now waybar.service"
+
+        # CAELESTIA
+        # Idle inhibit when audio playing
+        "exec-once = sway-audio-idle-inhibit --ignore-source-outputs cava"
+        # Resize and move windows based on matches (e.g. pip)
+        "exec-once = caelestia resizer -d"
+        # Start shell
+        "caelestia-shell -d"
+        # Idle daemon
+        "exec-once = hypridle"
       ];
 
       input = {
@@ -63,7 +76,7 @@ in
       };
 
       decoration = {
-        rounding = 10;
+        rounding = 25;
 
         dim_inactive = true;
         dim_strength = 0.06;
@@ -79,16 +92,23 @@ in
         };
       };
 
+      bindi = [
+      ];
+
       bind = [
-        "$mod, w, exec, pkill waybar || waybar &"
         "$mod, z, exec, $browser"
         "$mod, m, exec, $menu"
+        "$mod, Tab, global, caelestia:launcher"
         "$mod, e, exec, $emoji"
         "$mod, t, exec, $terminal"
-        "$mod, c, killactive,"
+        "$mod, q, killactive,"
         "$mod, s, exec, uwsm app -- hyprshot -m region --freeze"
         "$mod Shift, s, exec, uwsm app -- hyprshot -m output"
         "$mod Alt, s, exec, uwsm app -- hyprshot -m window"
+        "$mod Shift, C, exec, hyprpicker -a"
+        "$mod Shift, R, exec, caelestia record -s"
+        "$mod Alt, R, exec, caelestia record -r"
+        "$mod, w, exec, caelestia wallpaper -r"
 
         "$mod, j, movefocus, d"
         "$mod, k, movefocus, u"
@@ -156,6 +176,8 @@ in
 
       windowrulev2 = [
         "suppressevent maximize, class:.*" # Ignore maximize requests from apps.
+        "size <80% <80%, floating:1"
+        "center (1), floating:1"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0" # Fix some dragging issues with XWayland
 
         # Smart gaps
