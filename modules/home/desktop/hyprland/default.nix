@@ -48,8 +48,6 @@ in
         "exec-once = sway-audio-idle-inhibit --ignore-source-outputs cava"
         # Resize and move windows based on matches (e.g. pip)
         "exec-once = caelestia resizer -d"
-        # Start shell
-        "caelestia-shell -d"
         # Idle daemon
         "exec-once = hypridle"
       ];
