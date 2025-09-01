@@ -23,7 +23,7 @@
     concurrently
     lefthook
     clippy
-    postman
+    yaak
 
     # Nix
     nix-prefetch-github
