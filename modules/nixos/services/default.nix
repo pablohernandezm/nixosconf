@@ -10,4 +10,10 @@
     ./tmux
     ./virtualization
   ];
+
+  # Simple services settings
+  programs.zoxide = {
+    enable = true;
+    enableBashIntegration = true;
+  };
 }
