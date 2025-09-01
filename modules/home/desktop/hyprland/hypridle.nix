@@ -22,7 +22,7 @@
         }
         {
           timeout = 1800; # 30min
-          on-timeout = "systemctl suspend"; # suspend pc}
+          on-timeout = "systemctl suspend-then-hibernate || loginctl suspend"; # suspend pc}
         }
       ];
     };

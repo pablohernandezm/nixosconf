@@ -10,7 +10,7 @@ in
 {
   imports = [
     ./hypridle.nix
-    ./hyprpaper.nix
+    # ./hyprpaper.nix
   ];
 
   home.file = {
