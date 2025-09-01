@@ -35,6 +35,7 @@
 
     # Other apps
     youtube-music
+    pavucontrol
 
     # Vulnerable because of qtwebengine-5.15.19
     # stremio
