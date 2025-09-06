@@ -37,12 +37,12 @@
     }
   },
   "background": {
+    "enabled": true,
     "desktopClock": {
       "enabled": false
     },
-    "enabled": true,
     "visualiser": {
-      "enabled": true,
+      "enabled": false,
       "autoHide": true,
       "rounding": 1,
       "spacing": 1
