@@ -30,8 +30,8 @@
 
     # Browsers
     inputs.zen-browser.packages.${pkgs.system}.default
-    google-chrome
-    firefox
+    # google-chrome
+    # firefox
 
     # Other apps
     youtube-music
@@ -54,14 +54,17 @@
   };
 
   # Default applications
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "text/html" = "zen-browser.desktop";
-      "x-scheme-handler/http" = "zen-browser.desktop";
-      "x-scheme-handler/https" = "zen-browser.desktop";
+  xdg = {
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "text/html" = "zen-browser.desktop";
+        "x-scheme-handler/http" = "zen-browser.desktop";
+        "x-scheme-handler/https" = "zen-browser.desktop";
+      };
     };
   };
+
   home.sessionVariables = {
     BROWSER = "zen-browser";
   };

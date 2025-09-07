@@ -9,17 +9,11 @@
 
   xdg.desktopEntries.steam-run = {
     name = "Steam Run";
-    exec = ''sh -c "steam-run %f &"'';
-    icon = "steam";
+    exec = "${pkgs.steam-run}/bin/steam-run";
     type = "Application";
-    mimeType = [ "application/x-shellscript" ];
-    terminal = false;
-  };
-
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "application/x-shellscript" = "steam-run.desktop";
-    };
+    icon = "steam";
+    mimeType = [
+      "application/x-shellscript"
+    ];
   };
 }

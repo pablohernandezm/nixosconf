@@ -16,4 +16,6 @@
     enable = true;
     enableBashIntegration = true;
   };
+
+  programs.command-not-found.enable = true;
 }
