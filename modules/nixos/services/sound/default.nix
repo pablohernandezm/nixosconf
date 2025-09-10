@@ -1,9 +1,16 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services.pipewire = {
     enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
     pulse.enable = true;
+
+    # Uncomment if Bluetooth is being used
+    # wireplumber.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [ easyeffects ];
 
   services.playerctld.enable = true;
 
