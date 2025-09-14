@@ -5,7 +5,8 @@
 }:
 {
   imports = [
-    inputs.home-manager.nixosModules.home-manager
+    # inputs.home-manager.nixosModules.home-manager
+    (import "${inputs.home-manager}/nixos")
   ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -17,7 +18,6 @@
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
-  home-manager.backupFileExtension = "backup";
 
   home-manager.extraSpecialArgs = {
     inherit inputs;

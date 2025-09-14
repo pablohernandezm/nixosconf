@@ -6,7 +6,6 @@
   imports = [
     ./greeter
     ./hyprland
-    ./rofi
     ./steam
   ];
 
@@ -15,5 +14,6 @@
     wl-clipboard-rs
     cliphist
     brave
+    rofi
   ];
 }
