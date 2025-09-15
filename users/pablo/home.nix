@@ -12,7 +12,7 @@
     # Development
     gh
     cargo
-    cargo-watch
+    watchexec
     rustc
     gcc
     deno
@@ -24,6 +24,8 @@
     lefthook
     clippy
     yaak
+    mermaid-cli
+    umlet
 
     # Nix
     nix-prefetch-github
