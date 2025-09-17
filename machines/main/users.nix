@@ -14,6 +14,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
     initialPassword = "password";
+    useDefaultShell = true;
   };
 
   home-manager.useGlobalPkgs = true;

@@ -9,12 +9,14 @@
     ./ssh
     ./tmux
     ./virtualization
+    ./fish
   ];
 
   # Simple services settings
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
+    enableFishIntegration = true;
   };
 
   programs.command-not-found.enable = true;

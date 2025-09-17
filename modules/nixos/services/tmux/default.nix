@@ -7,6 +7,7 @@
       yank
       tmux-fzf
       tmux-sessionx
+
     ];
     keyMode = "vi";
     historyLimit = 5000;
@@ -15,6 +16,7 @@
       unbind C-b
       set -g prefix C-Space
       bind C-Space send-prefix
+      set -g default-command fish
     '';
   };
 }
