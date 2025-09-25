@@ -18,7 +18,6 @@
     deno
     nodejs
     supabase-cli
-    jujutsu
     act
     concurrently
     lefthook
@@ -52,6 +51,20 @@
     };
     delta = {
       enable = true;
+    };
+  };
+
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user = {
+        email = "phernandezm07@gmail.com";
+        name = "Pablo José Hernández Meléndez";
+      };
+
+      ui = {
+        editor = "nvim";
+      };
     };
   };
 

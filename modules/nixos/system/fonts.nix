@@ -5,6 +5,8 @@
       nerd-fonts.jetbrains-mono
       roboto-slab
       domine
+      corefonts
+      vista-fonts
     ];
     fontconfig = {
       defaultFonts = {
