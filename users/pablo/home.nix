@@ -26,6 +26,11 @@
     mermaid-cli
     umlet
 
+    #utils
+    ripgrep
+    fzf
+    tree-sitter
+
     # Nix
     nix-prefetch-github
 
@@ -38,8 +43,12 @@
     youtube-music
     pavucontrol
 
-    # Vulnerable because of qtwebengine-5.15.19
-    # stremio
+    # Lsp
+    lua-language-server
+    stylua
+    nil
+    alejandra
+    tinymist
   ];
 
   programs.git = {

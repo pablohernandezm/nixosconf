@@ -10,6 +10,7 @@
     ./tmux
     ./virtualization
     ./fish
+    ./neovim
   ];
 
   # Simple services settings
